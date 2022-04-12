@@ -1,1 +1,31 @@
 // Código de Nav acá
+.containerNav{
+    width: 100%;
+    justify-content: center;
+    background-color: #f6f6f6;
+}
+nav{
+    padding: 1%;
+    margin-left: 10%;
+    width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    @media @phone{
+        width: 100%;
+        margin-left: 0;
+    }
+    h1{
+        font-size: xx-large;
+    }
+    li{
+        font-size: large;
+        padding-top: 2.5%;
+        margin-left: 30%;
+        width: 40%;
+        justify-content: space-evenly;
+        @media @phone{
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+}

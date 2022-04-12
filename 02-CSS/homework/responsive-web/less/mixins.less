@@ -1,1 +1,20 @@
 // Mixins acá
+.centrar{
+    display: flex;
+    text-align: center;
+}
+nav{
+    .centrar();
+    li{
+        .centrar()
+    }
+}
+
+.portada{
+    .imagen()
+}
+
+.colores(@fondo,@letra){
+    color: @letra;
+    background-color: @fondo;
+}

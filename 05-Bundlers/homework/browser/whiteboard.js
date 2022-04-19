@@ -1,29 +1,29 @@
-(function () {
+const {EventEmitter} = require("./event-emitter.js")
 
-  window.whiteboard = new window.EventEmitter();
+window.whiteboard = new EventEmitter();
 
-  // Ultimately, the color of our stroke;
-  var color;
+// Ultimately, the color of our stroke;
+var color;
 
-  // The color selection elements on the DOM.
-  var colorElements = [].slice.call(document.querySelectorAll('.marker'));
+// The color selection elements on the DOM.
+var colorElements = [].slice.call(document.querySelectorAll('.marker'));
 
-  colorElements.forEach(function (el) {
+colorElements.forEach(function (el) {
 
-    // Set the background color of this element
-    // to its id (purple, red, blue, etc).
-    el.style.backgroundColor = el.id;
+  // Set the background color of this element
+  // to its id (purple, red, blue, etc).
+  el.style.backgroundColor = el.id;
 
-    // Attach a click handler that will set our color variable to
-    // the elements id, remove the selected class from all colors,
-    // and then add the selected class to the clicked color.
-    el.addEventListener('click', function () {
-        color = this.id;
-        document.querySelector('.selected').classList.remove('selected');
-        this.classList.add('selected');
-    });
-
+  // Attach a click handler that will set our color variable to
+  // the elements id, remove the selected class from all colors,
+  // and then add the selected class to the clicked color.
+  el.addEventListener('click', function () {
+      color = this.id;
+      document.querySelector('.selected').classList.remove('selected');
+      this.classList.add('selected');
   });
+
+});
 
   var canvas = document.getElementById('paint');
 
@@ -107,10 +107,12 @@
 
     // If shouldBroadcast is truthy, we will emit a draw event to listeners
     // with the start, end and color data.
-    if (shouldBroadcast) {
-      whiteboard.emit('draw', start, end, strokeColor);
-    }
+  if (shouldBroadcast) {
+    whiteboard.emit('draw', start, end, strokeColor);
+  }
 
-  };
+};
 
-})();
+module.exports = {
+  whiteboard
+}

@@ -1,0 +1,10 @@
+.search{
+    border: solid 1px grey;
+    border-radius: 5px;
+}
+.boton{
+    background-color: #464c52;
+    border: solid 1px #29a745;
+    color: #29a745;
+    border-radius: 5px;
+}

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import './Buscador.css';
 import {addMovieFavorite, getMovies} from "../../actions/index.js"
-import { get } from "@11ty/eleventy/src/TemplateCache";
 
 
 export class Buscador extends Component {
